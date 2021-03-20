@@ -1,0 +1,23 @@
+#wrapper{
+    width: 40%;
+    margin: auto;
+}
+header{
+    padding:20px
+}
+header h1{
+    font-size: 30px;
+}
+header .timer{
+    font-size: 20px;
+    text-align: right;
+}
+header .timer-last-10{
+    color:red;
+}
+.questions{
+    display: none;
+}
+.card-footer{
+    text-align: center;
+}
