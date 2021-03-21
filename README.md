@@ -9,11 +9,11 @@ This application utilizes:
 - jQuery closest, show, hide, delay and fadeout function to naviagte questions
 
 Using JSON to:
-This app uses the JSON to format score data and localstorage to store the formated data.
-Using JSON.parse to parse the stored data
+- to format score data and localstorage to store the formated data.
+- JSON.parse to parse the stored data
 
 Using CSS: 
-to format and hide HTML divs
+- to format and hide HTML divs
 
 The following image demonstrates the web application's appearance:
 
