@@ -15,7 +15,6 @@ var startCont = $("#start");
 var high_score = localStorage.getItem('high_scores');
 // variable to use to store highscores
 var sData = []; 
-
 // handle initial display of scores
 if (high_score !== null) {
     // parse the scores into variable 
@@ -31,7 +30,6 @@ if (high_score !== null) {
     //add current socores to sdata
     sData = JSON.parse(high_score);
 }
-
 // intial timer value
 $("#timer").text(time);
 //set intial score value
@@ -58,13 +56,13 @@ $("#start_button").on("click",function(){
     //start with question 1
     $("#question-1").show();
     //set the current question value
-    $("#current-q").text(q_counter+=1)
+    $("#current-q").text(q_counter+=1);
     //set the interval
     intervalTimer = setInterval(function(){
         // check the timer and stop at 0
         if (time>0){
         //decrease the timer by one
-        $("#timer").text(time-=1)
+        $("#timer").text(time-=1);
         }else{
             // if timedout handle end with the message as parameter
             handle_end(" Run Out of Time ");
@@ -87,7 +85,7 @@ $(".ans-b").on("click", function(){
     }else{
         //set the message as wrong and decrease time by 5
         $(".result-span").text("Wrong");
-        time-=5
+        time-=5;
     }
     //display the set message fadeing it out using jquery
     $("#ans-footer").show().delay(500).fadeOut();
@@ -138,10 +136,10 @@ $("#save_score").on("click", function(){
     // store and json stringify the sData 
     localStorage.setItem("high_scores", JSON.stringify(sData));
     //update the page
-    document.location.href=document.location.href
+    document.location.href=document.location.href;
     }
 });
 //hnadle the restart quiz option allowing user to skip adding their initials
 $("#restart_button").on("click", function(){
-    document.location.href=document.location.href
+    document.location.href=document.location.href;
 });
