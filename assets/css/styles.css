@@ -1,7 +1,9 @@
+/* wrapper widht to 80% and center content */
 #wrapper{
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
 }
+/* header setup with padding font size and timer */
 header{
     padding:20px
 }
@@ -12,39 +14,36 @@ header .timer{
     font-size: 20px;
     text-align: right;
 }
-header .timer-last-10{
-    color:red;
-}
-.questions{
+/* end header formating */
+
+/* hide divs that need to be hidden at start */
+.questions, .question, #ans-footer, #end{
     display: none;
 }
-.question{
-    display: none;
-}
+/* set color for current qustion counter */
 #current-q{
     color:red
 }
+/* center the card footer text displaying the error/success message */
 .card-footer{
     text-align: center;
 }
+/* Question type setting it to block and increasing font size */
 .q-type{
     display: block;
     font-size: larger;
 }
+/* adding text using the sudo query */
 .question button:before{
     content: "Answer: ";
 }
+/* question button formating */
 .question button{
     display: block;
     margin: 10px;
 }
-#ans-footer{
-    display:none
-}
+/* overide the bootstrap dark button */
 .bg-dark{
     margin:0px 0px 20px 0px;
     color: white;
-}
-#end{
-    display: none;
 }
