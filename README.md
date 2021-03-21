@@ -1,6 +1,7 @@
 Coding Assessment Quiz Application
 
-Simple application to display a HTML CSS and JavaScript Knowledge Quiz.
+Simple application to display a HTML,CSS and JavaScript Knowledge Quiz.
+This application also keeps the score of those that took the quiz in a desc order.
 
 This application utilizes:
 - dataset to store the questions
