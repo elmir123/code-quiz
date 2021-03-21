@@ -24,6 +24,9 @@ header .timer{
 #current-q{
     color:red
 }
+.card-header{
+    font-size: larger;
+}
 /* center the card footer text displaying the error/success message */
 .card-footer{
     text-align: center;
@@ -47,3 +50,4 @@ header .timer{
     margin:0px 0px 20px 0px;
     color: white;
 }
+.
