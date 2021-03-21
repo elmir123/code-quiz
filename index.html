@@ -9,6 +9,7 @@
     <title>Code Quiz</title>
 </head>
 <body>
+    <!-- header start -->
     <header class="bg-dark">
         <div class="row">
             <div class="col-md-6">
@@ -20,136 +21,154 @@
             </div>
         </div>
     </header>
+    <!-- end head -->
+    <!-- Main start -->
     <main>
+        <!-- wrapper of divs to control the width of content -->
         <div id="wrapper">
-        <div class="row">
+            <div class="row">
+            <!-- setting the left div column -->
             <div class="col-md-4">
-                
-                 <ul class="list-group">
-                    <li class="list-group-item active">High Scores</li>
-                    
+                <!-- container to display alltime scores -->
+                 <ul class="list-group" id="high-scores">
+                    <li class="list-group-item active">Current Scores</li>
                   </ul>
             </div>
+            <!-- end of left div and column -->
+            <!-- setting the right div and column -->
             <div class="col-md-8">
-        
-            <div id="start" class="card">
-                <div class="card-header text-dark bg-info">
-                    Introducation to our quiz
+                <!-- the start div with game rules -->
+                <div id="start" class="card">
+                    <div class="card-header text-dark bg-info">
+                        Introducation to our quiz
+                    </div>
+                    <div class="card-body">
+                        <p>This quiz will test your knowledge of CSS, HTML and Javascript</p>
+                        <p>Each qeustion is worth 10points.</p>
+                        <p>You can give one answer to each question.</p>
+                        <p>After selecting an answer, the quiz will advance automaticly.</p>
+                        <p>For every wrong answer 5 seconds will be didacted from the timer</p>
+                        <p>When ready click on start.</p>
+                    </div>
+                    <div class="card-footer text-dark bg-info">
+                        <button id="start_button" class="btn btn-primary">Start</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>This quiz will test your knowledge of CSS, HTML and Javascript</p>
-                    <p>Each qeustion is worth 10points.</p>
-                    <p>You can give one answer to each question.</p>
-                    <p>After selecting an answer, the quiz will advance automaticly.</p>
-                    <p>For every wrong answer 5 seconds will be didacted from the timer</p>
-                    <p>When ready click on start.</p>
-                </div>
-                <div class="card-footer text-dark bg-info">
-                    <button id="start_button" class="btn btn-primary">Start</button>
-                </div>
-            </div>
-            <div id="questions" class="card questions">
-                <div class="card-header text-dark bg-info">
-                    Question <strong id="current-q"></strong> of <span>10</span>
-                </div>
-                <div class="card-body">
-                    <div id="question-1" class="question">
-                        <span class="q-type">CSS</span>
-                        <span>How do you target class names?</span>
-                        <button data-ans="class-#" data-q="question-1" class="btn btn-danger ans-b">#</button>
-                        <button data-ans="class-&" data-q="question-1" class="btn btn-danger ans-b">&</button>
-                        <button data-ans="class-." data-q="question-1" class="btn btn-danger ans-b">.</button>
+                <!-- End of start card -->
+                <!-- questions card with changing card content -->
+                <div id="questions" class="card questions">
+                    <!-- setting the question card header -->
+                    <div class="card-header text-dark bg-info">
+                        Question <strong id="current-q"></strong> of <span>10</span>
                     </div>
-                    <div class="question">
-                        <span class="q-type">CSS</span>
-                        <span>What attribute would you use to link css file in your html?</span>
-                        <button data-ans="b-href" data-q="question-2" class="btn btn-danger ans-b">href</button>
-                        <button data-ans="b-source" data-q="question-2" class="btn btn-danger ans-b">source</button>
-                        <button data-ans="b-src" data-q="question-2" class="btn btn-danger ans-b">src</button>
-
-                    </div>
-                    <div class="question">
-                        <span class="q-type">CSS</span>
-                        <span>Where do you place css varable declarations?</span>
-                        <button data-ans="body" data-q="question-3" class="btn btn-danger ans-b">body{}</button>
-                        <button data-ans="root" data-q="question-3" class="btn btn-danger ans-b">root{}</button>
-                        <button data-ans="roof" data-q="question-3"  class="btn btn-danger ans-b">roof{}</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">HTML</span>
-                        <span>Which link will open a new window?</span>
-                        <button data-ans="new_window" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="new_window"&gt;Open&lt;/a&gt;</button>
-                        <button data-ans="new_win" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="new_win">Open&lt;/a&gt;</button>
-                        <button data-ans="_blank" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="_blank">Open&lt;/a&gt;</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">HTML</span>
-                        <span>What tag attrbute stores extra information and is accessed through object.dataset in javascript?</span>
-                        <button data-ans="blob" data-q="question-5" class="btn btn-danger ans-b">blob</button>
-                        <button data-ans="dataset" data-q="question-5" class="btn btn-danger ans-b">dataset</button>
-                        <button data-ans="data" data-q="question-5" class="btn btn-danger ans-b">data-{nameofdata}</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">HTML</span>
-                        <span>Pick the correct html document declaration.</span>
-                            <button data-ans="docu" data-q="question-6" class="btn btn-danger ans-b">&lt;DOCTYPE html&gt;</button>
-                            <button data-ans="doctype" data-q="question-6" class="btn btn-danger ans-b">&lt;!DOCTYPE html&gt;</button>
-                            <button data-ans="htmltype" data-q="question-6" class="btn btn-danger ans-b">&lt;!HTMLTYPE html&gt;</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">HTML</span>
-                        <span>Select the unodered list tag</span>
-                            <button data-ans="bl" data-q="question-7" class="btn btn-danger ans-b">&lt;bl&gt;</button>
-                            <button data-ans="dl" data-q="question-7" class="btn btn-danger ans-b">&lt;dl&gt;</button>
-                            <button data-ans="ul" data-q="question-7" class="btn btn-danger ans-b">&lt;ul&gt;</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">JavaScript</span>
-                        <span>Select anonymous function</span>
-                            <button data-ans="uf" data-q="question-8" class="btn btn-danger ans-b">function(){}</button>
-                            <button data-ans="df" data-q="question-8" class="btn btn-danger ans-b">function name(){}</button>
-                            <button data-ans="tf" data-q="question-8" class="btn btn-danger ans-b">name function(){}</button>
-                    </div>
-                    <div class="question">
-                        <span class="q-type">JavaScript</span>
-                        <span>What attribute would you use to link javascipt file in your html?</span>
-                            <button data-ans="jhref" data-q="question-9" class="btn btn-danger ans-b">href</button>
-                            <button data-ans="jsrc" data-q="question-9" class="btn btn-danger ans-b">src</button>
-                            <button data-ans="jlink" data-q="question-9" class="btn btn-danger ans-b">link</button>
+                    <!-- card body with multiple divs hidden using the css display none -->
+                    <div class="card-body">
+                        <!-- Questions divs -->
+                        <div id="question-1" class="question">
+                            <!-- Display Question Category set as block using css-->
+                            <span class="q-type">CSS</span>
+                            <!-- Question set as block using css -->
+                            <span>How do you target class names?</span>
+                            <!-- Question answers with data for question and answers -->
+                            <button data-ans="class-#" data-q="question-1" class="btn btn-danger ans-b">#</button>
+                            <button data-ans="class-&" data-q="question-1" class="btn btn-danger ans-b">&</button>
+                            <button data-ans="class-." data-q="question-1" class="btn btn-danger ans-b">.</button>
                         </div>
-                    <div class="question">
-                        <span class="q-type">JavaScript</span>
-                        <span>jQuery is a: </span>
-                        <button data-ans="bs" data-q="question-10" class="btn btn-danger ans-b">browser native javascript language</button>
-                        <button data-ans="jquery" data-q="question-10" class="btn btn-danger ans-b">JavaScript library</button>
-                        <button data-ans="drs" data-q="question-10" class="btn btn-danger ans-b">HTML tag</button>
+                        <div class="question">
+                            <span class="q-type">CSS</span>
+                            <span>What attribute would you use to link css file in your html?</span>
+                            <button data-ans="b-href" data-q="question-2" class="btn btn-danger ans-b">href</button>
+                            <button data-ans="b-source" data-q="question-2" class="btn btn-danger ans-b">source</button>
+                            <button data-ans="b-src" data-q="question-2" class="btn btn-danger ans-b">src</button>
+
+                        </div>
+                        <div class="question">
+                            <span class="q-type">CSS</span>
+                            <span>Where do you place css varable declarations?</span>
+                            <button data-ans="body" data-q="question-3" class="btn btn-danger ans-b">body{}</button>
+                            <button data-ans="root" data-q="question-3" class="btn btn-danger ans-b">root{}</button>
+                            <button data-ans="roof" data-q="question-3"  class="btn btn-danger ans-b">roof{}</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">HTML</span>
+                            <span>Which link will open a new window?</span>
+                            <button data-ans="new_window" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="new_window"&gt;Open&lt;/a&gt;</button>
+                            <button data-ans="new_win" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="new_win">Open&lt;/a&gt;</button>
+                            <button data-ans="_blank" data-q="question-4" class="btn btn-danger ans-b">&lt;a href="#" target="_blank">Open&lt;/a&gt;</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">HTML</span>
+                            <span>What tag attrbute stores extra information and is accessed through object.dataset in javascript?</span>
+                            <button data-ans="blob" data-q="question-5" class="btn btn-danger ans-b">blob</button>
+                            <button data-ans="dataset" data-q="question-5" class="btn btn-danger ans-b">dataset</button>
+                            <button data-ans="data" data-q="question-5" class="btn btn-danger ans-b">data-{nameofdata}</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">HTML</span>
+                            <span>Pick the correct html document declaration.</span>
+                                <button data-ans="docu" data-q="question-6" class="btn btn-danger ans-b">&lt;DOCTYPE html&gt;</button>
+                                <button data-ans="doctype" data-q="question-6" class="btn btn-danger ans-b">&lt;!DOCTYPE html&gt;</button>
+                                <button data-ans="htmltype" data-q="question-6" class="btn btn-danger ans-b">&lt;!HTMLTYPE html&gt;</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">HTML</span>
+                            <span>Select the unodered list tag</span>
+                                <button data-ans="bl" data-q="question-7" class="btn btn-danger ans-b">&lt;bl&gt;</button>
+                                <button data-ans="dl" data-q="question-7" class="btn btn-danger ans-b">&lt;dl&gt;</button>
+                                <button data-ans="ul" data-q="question-7" class="btn btn-danger ans-b">&lt;ul&gt;</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">JavaScript</span>
+                            <span>Select anonymous function</span>
+                                <button data-ans="uf" data-q="question-8" class="btn btn-danger ans-b">function(){}</button>
+                                <button data-ans="df" data-q="question-8" class="btn btn-danger ans-b">function name(){}</button>
+                                <button data-ans="tf" data-q="question-8" class="btn btn-danger ans-b">name function(){}</button>
+                        </div>
+                        <div class="question">
+                            <span class="q-type">JavaScript</span>
+                            <span>What attribute would you use to link javascipt file in your html?</span>
+                                <button data-ans="jhref" data-q="question-9" class="btn btn-danger ans-b">href</button>
+                                <button data-ans="jsrc" data-q="question-9" class="btn btn-danger ans-b">src</button>
+                                <button data-ans="jlink" data-q="question-9" class="btn btn-danger ans-b">link</button>
+                            </div>
+                        <div class="question">
+                            <span class="q-type">JavaScript</span>
+                            <span>jQuery is a: </span>
+                            <button data-ans="bs" data-q="question-10" class="btn btn-danger ans-b">browser native javascript language</button>
+                            <button data-ans="jquery" data-q="question-10" class="btn btn-danger ans-b">JavaScript library</button>
+                            <button data-ans="drs" data-q="question-10" class="btn btn-danger ans-b">HTML tag</button>
+                        </div>
+                    </div>
+                    <!-- display the success error message hding and showing the footer div -->
+                    <div id="ans-footer" class="card-footer text-dark bg-info">
+                        <small class="text-muted result-span"></small>
                     </div>
                 </div>
-                <div id="ans-footer" class="card-footer text-dark bg-info">
-                    <small class="text-muted result-span"></small>
+                <!-- End of questions card -->
+                <div id="end" class="card">
+                    <div class="card-header text-dark bg-info">
+                        You Have <span id="end_head"></span>
+                    </div>
+                    <div class="card-body">
+                        <div>Your Score: <span id="score_result"></span></div>
+                        <div class="form-control">
+                            <input type="text" name="user_name" id="username" placeholder="Your Initals" required />
+                        </div>
+                        <div class="form-control">
+                            <button id="save_score" class="btn btn-primary">Save Your Score</button>
+                        </div>
+                        
+                    </div>
+                    <div class="card-footer text-dark bg-info">
+                        <button id="restart_button" class="btn btn-primary">Restart Quiz</button>
+                    </div>
                 </div>
             </div>
-            <div id="end" class="card">
-                <div class="card-header text-dark bg-info">
-                    You Have <span id="end_head"></span>
-                </div>
-                <div class="card-body">
-                    <div>Your Score: <span id="score_result"></span></div>
-                    <div class="form-control">
-                        <input type="text" name="user_name" id="username" placeholder="Your Name" required />
-                    </div>
-                    <div class="form-control">
-                        <button id="save_score" class="btn btn-primary">Save Your Score</button>
-                    </div>
-                    
-                </div>
-                <div class="card-footer text-dark bg-info">
-                    <button id="restart_button" class="btn btn-primary">Restart Quiz</button>
-                </div>
-            </div>
+            <!-- End of right div holding the questions card -->
         </div>
-        </div>
+        <!-- End of wrapper -->
     </main>
+    <!-- End of main section -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
