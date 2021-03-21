@@ -1,4 +1,5 @@
 //declairing varaibles
+var curUrl = document.location.href;
 //Question Counter
 var q_counter=0;
 //Timer
@@ -125,7 +126,7 @@ $("#save_score").on("click", function(){
     // get the name/initials and check that input length is higher then 1
     var get_name=$("#username").val();
     //validate the input
-    if (get_name.length > 1){
+    if (get_name.length > 1 ){
         //craate object from answers
         var saved_score = {
             person: get_name.trim(),
@@ -136,10 +137,10 @@ $("#save_score").on("click", function(){
     // store and json stringify the sData 
     localStorage.setItem("high_scores", JSON.stringify(sData));
     //update the page
-    document.location.href=document.location.href;
+    document.location.href=curUrl;
     }
 });
 //hnadle the restart quiz option allowing user to skip adding their initials
 $("#restart_button").on("click", function(){
-    document.location.href=document.location.href;
+    document.location.href=curUrl;
 });
